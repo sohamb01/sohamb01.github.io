@@ -67,9 +67,10 @@ body {
 
 .intro-text {
     font-size: 16px;
-    color: #4a90e2;
-    font-weight: 500;
+    color: #666;
+    font-weight: 400;
     margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .hero-name {
