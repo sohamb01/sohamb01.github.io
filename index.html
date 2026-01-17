@@ -135,7 +135,7 @@ function type() {
     // Check if word is complete
     if (!isDeleting && charIndex === currentPhrase.length) {
         // Pause at end of phrase
-        typeSpeed = 2000;
+        typeSpeed = 1000;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         // Move to next phrase
