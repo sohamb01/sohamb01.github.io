@@ -236,3 +236,50 @@ footer {
     0%, 100% { border-color: #e74c3c; }
     50% { border-color: transparent; }
 }
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.icon-button:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.icon-button:hover .icon-circle {
+    background-color: #333;
+}
+
+.icon-circle i {
+    font-size: 35px;
+    color: white;
+}
+
+.icon-button span {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
