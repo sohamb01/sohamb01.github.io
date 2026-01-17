@@ -30,7 +30,7 @@
             <div class="hero-text">
                 <p class="intro-text">Hi, my name is</p>
                 <h1 class="hero-name">Soham Bonnerjee.</h1>
-                
+                <h2 class="hero-tagline">I employ statistics to <span class="typewriter"></span></h2>
                 
                 <div class="hero-description">
                     <p>I am a fifth year PhD student in the <a href="https://stat.uchicago.edu/">Department of Statistics</a> at the <a href="https://www.uchicago.edu/en/">University of Chicago</a>, advised by <a href="https://www.stat.uchicago.edu/~wbwu/">Prof. Wei Biao Wu</a>.</p>
@@ -85,5 +85,55 @@
             <p>© 2025 Soham Bonnerjee</p>
         </div>
     </footer>
+    <script>
+// Typing animation
+const phrases = [
+    'understand time series.',
+    'understand optimization.',
+    'understand generative models.'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typewriterElement = document.querySelector('.typewriter');
+
+function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+        // Remove characters
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        // Add characters
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    // Determine typing speed
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    // Check if word is complete
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        // Pause at end of phrase
+        typeSpeed = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        // Move to next phrase
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 500;
+    }
+    
+    setTimeout(type, typeSpeed);
+}
+
+// Start the animation when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(type, 1000);
+});
+</script>
+
 </body>
 </html>
