@@ -238,10 +238,12 @@ footer {
 }
 
 /* Social Icons */
+/* Social Icons */
 .social-icons {
     display: flex;
     gap: 40px;
     margin: 40px 0;
+    justify-content: center;
 }
 
 .icon-button {
