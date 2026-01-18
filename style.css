@@ -60,7 +60,7 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: start;
 }
