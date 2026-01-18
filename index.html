@@ -149,6 +149,24 @@ function type() {
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(type, 1000);
 });
+// Card flip functionality
+let isFlipped = false;
+const flipCard = document.getElementById('flip-card');
+const toggleLink = document.getElementById('image-toggle');
+
+toggleLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (!isFlipped) {
+        flipCard.classList.add('flipped');
+        toggleLink.textContent = '👤 Back to reality';
+        isFlipped = true;
+    } else {
+        flipCard.classList.remove('flipped');
+        toggleLink.textContent = '🤖 See my AI alter ego';
+        isFlipped = false;
+    }
+});        
 </script>
 
 </body>
