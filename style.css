@@ -61,7 +61,7 @@ body {
     padding: 0 40px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: start;
 }
 
