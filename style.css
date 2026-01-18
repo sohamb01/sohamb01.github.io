@@ -60,9 +60,9 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 60px;
+    align-items: start;
 }
 
 .hero-text {
