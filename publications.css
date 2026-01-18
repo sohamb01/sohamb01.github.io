@@ -24,20 +24,11 @@
     color: #333;
 }
 
-.interests-grid {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.interest-tag {
-    background-color: #4a90e2;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
+.research-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 900px;
 }
 
 /* Publications Section */
@@ -73,17 +64,56 @@
     border-left-color: #4a90e2;
 }
 
-.publication-item.highlight-pub {
-    border-left-color: #e74c3c;
-    background-color: #fff9f5;
+/* Title row with icons */
+.pub-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .pub-title {
+    flex: 1;
     font-size: 1.1rem;
     font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 12px;
     line-height: 1.4;
+}
+
+.pub-icons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.pub-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #4a90e2;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pub-icon:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.pub-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
 }
 
 .pub-authors {
@@ -110,46 +140,14 @@
     font-size: 0.9rem;
     color: #666;
     font-style: italic;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .pub-award {
     font-size: 0.9rem;
     color: #e74c3c;
     font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.pub-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-}
-
-.pub-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    color: #333;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.pub-link:hover {
-    background-color: #4a90e2;
-    color: white;
-    border-color: #4a90e2;
-}
-
-.pub-link svg {
-    flex-shrink: 0;
+    margin-top: 8px;
 }
 
 /* Responsive */
@@ -164,5 +162,14 @@
     
     .publication-item {
         padding: 20px;
+    }
+    
+    .pub-title-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .pub-icons {
+        align-self: flex-start;
     }
 }
