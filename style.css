@@ -225,6 +225,31 @@ body {
     padding: 15px 20px;
 }
 
+.news-list {
+    max-height: 350px;  /* Adjust this to fit ~3 news items */
+    overflow-y: auto;
+    padding-right: 10px; /* Prevents content from touching scrollbar */
+}
+
+/* Optional: Style the scrollbar to match your aesthetic */
+.news-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    background: #4a90e2;
+    border-radius: 4px;
+}
+
+.news-list::-webkit-scrollbar-thumb:hover {
+    background: #357abd;
+}
+
 .news-list a, .education-list a {
     color: #4a90e2;
     text-decoration: none;
