@@ -73,38 +73,84 @@
     line-height: 1.4;
 }
 
+/* Publication Badges */
 .pub-icons {
-    display: flex;
-    gap: 6px;
+    display: inline-flex;
+    gap: 8px;
     flex-shrink: 0;
     align-items: center;
+    margin-left: 8px;
 }
 
 .pub-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    padding: 4px 10px;
+    background-color: #1a1a1a;
+    border-radius: 4px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    opacity: 0.7;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .pub-icon:hover {
-    opacity: 1;
     transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.pub-icon svg {
-    width: 18px;
-    height: 18px;
+/* arXiv Badge */
+.pub-icon.arxiv {
+    background-color: #1a1a1a;
+    color: #b31b1b;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+.pub-icon.arxiv:hover {
+    background-color: #2a2a2a;
+}
+
+/* Journal Badge */
+.pub-icon.journal {
+    background-color: #1a1a1a;
+    color: #4a90e2;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.pub-icon.journal:hover {
+    background-color: #2a2a2a;
+}
+
+/* NeurIPS Badge */
+.pub-icon.neurips {
+    background-color: #1a1a1a;
+    color: #ff6b35;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+}
+
+.pub-icon.neurips:hover {
+    background-color: #2a2a2a;
+}
+
+/* Preprint/Draft Badge */
+.pub-icon.preprint {
+    background-color: #1a1a1a;
+    color: #10b981;
+    font-family: 'Inter', sans-serif;
+}
+
+.pub-icon.preprint:hover {
+    background-color: #2a2a2a;
+}
+
+/* Remove old icon styles */
+.pub-icon svg,
 .icon-img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+    display: none;
 }
 
 .pub-authors {
