@@ -101,36 +101,9 @@
 .pub-icon.preprint{ color: #10b981; }
 .pub-icon.code    { color: #a78bfa; }
 
-
-
 .pub-icon:hover {
     transform: translateY(-2px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-}
-
-/* Tooltip */
-.pub-icon::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: #222;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.72rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
-    letter-spacing: 0.3px;
-}
-
-.pub-icon:hover::after {
-    opacity: 1;
 }
 
 /* Remove old icon styles */
