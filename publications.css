@@ -78,20 +78,30 @@
     margin-left: 8px;
 }
 
+/* Base icon — no background */
 .pub-icon {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    background-color: #1a1a1a;
+    width: 24px;
+    height: 24px;
+    background: none;       /* ← was #1a1a1a */
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.2s ease;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     vertical-align: middle;
 }
+
+/* Remove background-color from ALL variants — keep only color */
+.pub-icon.arxiv   { color: #f97316; }
+.pub-icon.journal { color: #4a90e2; }
+.pub-icon.neurips { color: #ff6b35; }
+.pub-icon.preprint{ color: #10b981; }
+.pub-icon.code    { color: #a78bfa; }
+
+
 
 .pub-icon:hover {
     transform: translateY(-2px);
@@ -121,46 +131,6 @@
 
 .pub-icon:hover::after {
     opacity: 1;
-}
-
-/* arXiv Badge */
-.pub-icon.arxiv {
-    background-color: #1a1a1a;
-    color: #f97316;
-}
-
-.pub-icon.arxiv:hover {
-    background-color: #2a2a2a;
-}
-
-/* Journal Badge — closed lock (paywalled) */
-.pub-icon.journal {
-    background-color: #1a1a1a;
-    color: #4a90e2;
-}
-
-.pub-icon.journal:hover {
-    background-color: #2a2a2a;
-}
-
-/* Conference Badge — open lock (open access) */
-.pub-icon.neurips {
-    background-color: #1a1a1a;
-    color: #ff6b35;
-}
-
-.pub-icon.neurips:hover {
-    background-color: #2a2a2a;
-}
-
-/* Preprint/Draft Badge */
-.pub-icon.preprint {
-    background-color: #1a1a1a;
-    color: #10b981;
-}
-
-.pub-icon.preprint:hover {
-    background-color: #2a2a2a;
 }
 
 /* Remove old icon styles */
