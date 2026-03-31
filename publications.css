@@ -79,53 +79,74 @@
 }
 
 .pub-icon {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 3px 8px;
+    width: 28px;
+    height: 28px;
     background-color: #1a1a1a;
-    border-radius: 3px;
+    border-radius: 4px;
     text-decoration: none;
     transition: all 0.2s ease;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+    font-size: 0.95rem;
     vertical-align: middle;
 }
 
 .pub-icon:hover {
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip */
+.pub-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    letter-spacing: 0.3px;
+}
+
+.pub-icon:hover::after {
+    opacity: 1;
 }
 
 /* arXiv Badge */
 .pub-icon.arxiv {
     background-color: #1a1a1a;
     color: #f97316;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .pub-icon.arxiv:hover {
     background-color: #2a2a2a;
 }
 
-/* Journal Badge */
+/* Journal Badge — closed lock (paywalled) */
 .pub-icon.journal {
     background-color: #1a1a1a;
     color: #4a90e2;
-    font-family: Georgia, 'Times New Roman', serif;
 }
 
 .pub-icon.journal:hover {
     background-color: #2a2a2a;
 }
 
-/* NeurIPS Badge */
+/* Conference Badge — open lock (open access) */
 .pub-icon.neurips {
     background-color: #1a1a1a;
     color: #ff6b35;
-    font-family: 'Arial', sans-serif;
-    font-weight: 700;
 }
 
 .pub-icon.neurips:hover {
@@ -136,7 +157,6 @@
 .pub-icon.preprint {
     background-color: #1a1a1a;
     color: #10b981;
-    font-family: 'Inter', sans-serif;
 }
 
 .pub-icon.preprint:hover {
