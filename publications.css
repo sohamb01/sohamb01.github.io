@@ -168,4 +168,5 @@
     .pub-icons {
         align-self: flex-start;
     }
+    .pub-icon.talk { color: #6366f1; }
 }
