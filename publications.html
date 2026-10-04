@@ -34,12 +34,40 @@
                 <p class="research-description">My research interests lie broadly at the intersection of time series and learning theory, with a central focus on developing valid statistical inference methods for data exhibiting complex dependency structures. Most recently, I've been exploring the generative models, such as diffusion, through the same lens.</p>
             </div>
 
+            <!-- Publication filters: all selected topics AND any selected publication type. -->
+            <div class="publication-filters" role="group" aria-label="Filter publications: match every selected topic and any selected publication type" hidden>
+                <div class="publication-filter-row" role="group" aria-label="Topics: match all selected topics">
+                    <button type="button" class="pub-filter-button" data-filter-kind="all" data-filter="all"
+                            aria-pressed="true" aria-controls="publication-results">All</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="topic" data-filter="time-series"
+                            aria-pressed="false" aria-controls="publication-results">Time Series</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="topic" data-filter="learning-theory"
+                            aria-pressed="false" aria-controls="publication-results">Learning Theory</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="topic" data-filter="ai-generative-models"
+                            aria-pressed="false" aria-controls="publication-results">AI and Generative Models</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="topic" data-filter="miscellaneous"
+                            aria-pressed="false" aria-controls="publication-results">Miscellaneous</button>
+                </div>
+                <div class="publication-filter-row publication-filter-types" role="group" aria-label="Publication types: match any selected type">
+                    <button type="button" class="pub-filter-button" data-filter-kind="type" data-filter="preprints"
+                            aria-pressed="false" aria-controls="publication-results">Preprints</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="type" data-filter="journal"
+                            aria-pressed="false" aria-controls="publication-results">Journal Papers</button>
+                    <button type="button" class="pub-filter-button" data-filter-kind="type" data-filter="conference"
+                            aria-pressed="false" aria-controls="publication-results">Conference Papers</button>
+                </div>
+            </div>
+            <p id="publication-filter-status" class="pub-filter-status" role="status" aria-atomic="true"></p>
+
+            <div id="publication-results">
+            <p class="pub-filter-empty" hidden>No papers match the selected filters. Deselect a filter or choose All.</p>
+            <!-- Use space-separated data-topics on each paper to allow overlapping topics. -->
             <!-- Preprints -->
-            <div class="publications-section">
+            <div class="publications-section" data-publication-type="preprints">
                 <h2>Preprints</h2>
                 <ul class="publications-list">
 
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="miscellaneous">
                         <div class="pub-title-row">
                             <div class="pub-title">Fast localization of anomalous patches in spatial data under dependence.</div>
                             <div class="pub-icons">
@@ -56,7 +84,7 @@
                     </li>
                     
 
-                      <li class="publication-item">
+                      <li class="publication-item" data-topics="time-series ai-generative-models">
                         <div class="pub-title-row">
                             <div class="pub-title">Fast segmentation of watermarked texts from large language models through epidemic change-points framework.</div>
                             <div class="pub-icons">
@@ -76,7 +104,7 @@
                     </li>
                     
                     
-                 <li class="publication-item">
+                 <li class="publication-item" data-topics="learning-theory">
                         <div class="pub-title-row">
                             <div class="pub-title">Identifying stability regions of SGD with constant learning rates.</div>
                             <div class="pub-icons">
@@ -94,7 +122,7 @@
                     </li>
 
 
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="time-series">
                         <div class="pub-title-row">
                             <div class="pub-title">Testing synchronization of change-points for multiple time series.</div>
                             <div class="pub-icons">
@@ -116,11 +144,11 @@
 
     
 
-         <div class="publications-section">
+         <div class="publications-section" data-publication-type="journal">
                 <h2>Journal Publications</h2>
                 <ul class="publications-list">
 
-                                        <li class="publication-item">
+                                        <li class="publication-item" data-topics="learning-theory ai-generative-models">
                         <div class="pub-title-row">
                             <div class="pub-title">How Private is Your Attention? Bridging Privacy with In-Context Learning.</div>
                             <div class="pub-icons">
@@ -140,7 +168,7 @@
                         <div class="pub-venue">Accepted at <em>Transactions on Machine Learning Research.</em>, 2026</div>
                     </li>
 
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="time-series">
                         <div class="pub-title-row">
                             <div class="pub-title">Gaussian Approximation For Non-stationary Time Series with Optimal Rate and Explicit Construction.</div>
                             <div class="pub-icons">
@@ -156,7 +184,7 @@
                         <div class="pub-venue"><em>Annals of Statistics</em>, 52(5): 2293–2317, 2024</div>
                     </li>
 
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="miscellaneous">
                         <div class="pub-title-row">
                             <div class="pub-title">A Generalized Epidemiological Model with Dynamic and Asymptomatic Population.</div>
                             <div class="pub-icons">
@@ -176,11 +204,11 @@
             </div>
 
             <!-- Conference Publications -->
-            <div class="publications-section">
+            <div class="publications-section" data-publication-type="conference">
                 <h2>Conference Publications</h2>
                 <ul class="publications-list">
 
-                  <li class="publication-item">
+                  <li class="publication-item" data-topics="learning-theory">
                         <div class="pub-title-row">
                             <div class="pub-title">Stability beyond bounded differences: sharp generalization bounds under finite L<sub>p</sub> moments.</div>
                             <div class="pub-icons">
@@ -197,7 +225,7 @@
                        <div class="pub-venue"><em>ICML 2026</em>, Poster</div>
                     </li>
                     
-             <li class="publication-item">
+             <li class="publication-item" data-topics="learning-theory">
                         <div class="pub-title-row">
                             <div class="pub-title">Sharp asymptotic theory for Q-learning with LD2Z learning rate and its generalization.</div>
                             <div class="pub-icons">
@@ -214,7 +242,7 @@
                     </li>
 
                     
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="learning-theory">
                         <div class="pub-title-row">
                             <div class="pub-title">Sharp Gaussian approximations for Decentralized Federated Learning.</div>
                             <div class="pub-icons">
@@ -231,7 +259,7 @@
                         <div class="pub-venue"><em>NeurIPS 2025</em>, <strong>Spotlight (Top 3%)</strong></div>
                     </li>
 
-                    <li class="publication-item">
+                    <li class="publication-item" data-topics="learning-theory">
                         <div class="pub-title-row">
                             <div class="pub-title">Asymptotic theory of SGD with a general learning-rate.</div>
                             <div class="pub-icons">
@@ -250,6 +278,8 @@
                     </li>
                 </ul>
             </div>
+            </div><!-- /publication-results -->
+        </div><!-- /content-container -->
     </section>
 
     <!-- Footer -->
@@ -319,6 +349,102 @@ document.querySelectorAll('.pub-icon').forEach(el => {
         tooltip.style.opacity = '0';
     });
 });
+</script>
+
+<script>
+// Filter the existing publication entries without copying or reordering them.
+(() => {
+    const research = document.querySelector('.research-section');
+    if (!research) return;
+
+    const controls = research.querySelector('.publication-filters');
+    const results = research.querySelector('#publication-results');
+    const status = research.querySelector('#publication-filter-status');
+    const emptyMessage = research.querySelector('.pub-filter-empty');
+    if (!controls || !results || !status || !emptyMessage) return;
+
+    const buttons = Array.from(controls.querySelectorAll('button[data-filter]'));
+    const sections = Array.from(results.querySelectorAll('[data-publication-type]'));
+    if (!buttons.length || !sections.length) return;
+
+    const selectedTopics = new Set();
+    const selectedTypes = new Set();
+
+    function applyFilters() {
+        let visibleCount = 0;
+
+        sections.forEach(section => {
+            // No selected types means all types are allowed.
+            const matchesType = selectedTypes.size === 0
+                || selectedTypes.has(section.dataset.publicationType);
+            let sectionCount = 0;
+
+            section.querySelectorAll('.publication-item').forEach(paper => {
+                const topics = (paper.dataset.topics || '').split(/\s+/).filter(Boolean);
+                // AND within topics; OR within types; AND between the two groups.
+                // An empty topic selection imposes no topic restriction.
+                const matchesTopic = Array.from(selectedTopics)
+                    .every(topic => topics.includes(topic));
+                const matches = matchesTopic && matchesType;
+
+                paper.hidden = !matches;
+                if (matches) sectionCount += 1;
+            });
+
+            // Hide the heading, list and spacing together when a section is empty.
+            section.hidden = sectionCount === 0;
+            visibleCount += sectionCount;
+        });
+
+        const showAll = selectedTopics.size === 0 && selectedTypes.size === 0;
+        const topicLabels = [];
+        const typeLabels = [];
+
+        buttons.forEach(button => {
+            const kind = button.dataset.filterKind;
+            const value = button.dataset.filter;
+            const active = kind === 'all' ? showAll
+                : kind === 'topic' ? selectedTopics.has(value)
+                : kind === 'type' && selectedTypes.has(value);
+
+            button.setAttribute('aria-pressed', String(active));
+            if (active && kind === 'topic') topicLabels.push(button.textContent.trim());
+            if (active && kind === 'type') typeLabels.push(button.textContent.trim());
+        });
+
+        emptyMessage.hidden = visibleCount > 0;
+        const description = showAll ? 'All'
+            : `${topicLabels.join(' and ') || 'All topics'}; `
+              + `${typeLabels.join(' or ') || 'all publication types'}`;
+        status.textContent = `${description}: ${visibleCount} `
+            + `publication${visibleCount === 1 ? '' : 's'} shown.`;
+    }
+
+    controls.addEventListener('click', event => {
+        const button = event.target.closest('button[data-filter]');
+        if (!button || !controls.contains(button)) return;
+
+        const kind = button.dataset.filterKind;
+        const value = button.dataset.filter;
+        if (kind === 'all') {
+            selectedTopics.clear();
+            selectedTypes.clear();
+        } else {
+            const selected = kind === 'topic' ? selectedTopics
+                : kind === 'type' ? selectedTypes : null;
+            if (!selected) return;
+            // Click to select; click the same button again to deselect.
+            if (selected.has(value)) selected.delete(value);
+            else selected.add(value);
+        }
+        applyFilters();
+    });
+
+    // With JavaScript disabled, controls stay hidden and every paper stays visible.
+    // A fresh load, All, or deselecting the last filter restores the complete list.
+    applyFilters();
+    controls.hidden = false;
+})();
 </script>
 </body>
 </html>

@@ -170,3 +170,131 @@
     }
     .pub-icon.talk { color: #6366f1; }
 }
+
+/* Publication filters */
+.publication-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 40px;
+    border: 1px solid #dfddd6;
+    border-radius: 8px;
+    background-color: #f5f3ed;
+}
+
+.publication-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.publication-filter-types {
+    border-top: 1px solid #e2dfd7;
+    padding-top: 12px;
+}
+
+.pub-filter-button {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 9px 15px;
+    border: 1px solid #d3d0c7;
+    border-radius: 5px;
+    background-color: #faf8f3;
+    color: #414141;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pub-filter-button:hover {
+    border-color: #2f6fa7;
+    background-color: #edf2f6;
+    color: #245783;
+}
+
+.pub-filter-button[aria-pressed="true"] {
+    border-color: #2f6fa7;
+    background-color: #2f6fa7;
+    color: #fff;
+}
+
+.pub-filter-button:focus-visible {
+    outline: 2px solid #245783;
+    outline-offset: 3px;
+}
+
+/* Publication types use green; topics retain the blue selection style. */
+.pub-filter-button[data-filter-kind="type"] {
+    border-color: #9ac5ad;
+    background-color: #f1f7f2;
+    color: #236844;
+}
+
+.pub-filter-button[data-filter-kind="type"]:hover {
+    border-color: #287347;
+    background-color: #e7f2e8;
+    color: #1d5637;
+}
+
+.pub-filter-button[data-filter-kind="type"][aria-pressed="true"] {
+    border-color: #287347;
+    background-color: #287347;
+    color: #fff;
+}
+
+.pub-filter-button[data-filter-kind="type"]:focus-visible {
+    outline-color: #1d5637;
+}
+
+/* Keep hidden filters, papers and entire empty sections out of the layout. */
+.research-section .publication-filters[hidden],
+#publication-results [hidden] {
+    display: none !important;
+}
+
+.pub-filter-empty {
+    padding: 20px 0 40px;
+    color: #666;
+}
+
+/* Announce updated result counts without adding visual clutter. */
+.pub-filter-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .publication-filters {
+        padding: 12px;
+        margin-bottom: 30px;
+    }
+
+    .pub-filter-button {
+        padding: 9px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pub-filter-button {
+        transition: none;
+    }
+}
